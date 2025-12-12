@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Biblioteca Digital</title>
+
+    <style>
+        body {
+            background: #f4f6f7;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1a5276;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: white;
+            width: 90%;
+            margin: 18px auto;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+        .titulo {
+            font-size: 20px;
+            color: #1a5276;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .volver {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            background: #1a5276;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .volver:hover {
+            background: #154360;
+        }
+
+        .etiqueta {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .sub {
+            font-size: 13px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Biblioteca Digital</h1>
+
+<a href="/" class="volver">⬅ Volver al menú</a>
+
+{% for b in biblioteca %}
+<div class="card">
+    <div class="titulo">{{ b.titulo }}</div>
+
+    <p><span class="etiqueta">Autor:</span> {{ b.autor }}</p>
+
+    <p><span class="etiqueta">Tipo de recurso:</span> {{ b.get_tipo_recurso_display }}</p>
+
+    <p><span class="etiqueta">Descripción:</span><br> {{ b.descripcion }}</p>
+
+    <p><span class="etiqueta">Subido por:</span> {{ b.subido_por.nombre }}</p>
+
+    <p class="sub">Fecha: {{ b.fecha_subida }}</p>
+
+    {% if b.archivo %}
+        <p><a href="{{ b.archivo.url }}" target="_blank"> Descargar archivo</a></p>
+    {% else %}
+        <p><em>No hay archivo adjunto</em></p>
+    {% endif %}
+
+    <p><strong>¿Público?:</strong> {{ b.publico }}</p>
+</div>
+{% endfor %}
+
+</body>
+</html>

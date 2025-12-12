@@ -10,3 +10,6 @@ class BibliotecaLeerCrear(generics.ListCreateAPIView):
 class BibliotecaEditarEliminar(generics.RetrieveUpdateDestroyAPIView):
     queryset = Biblioteca.objects.all()
     serializer_class = BibliotecaSerializers
+def biblioteca_template(request):
+    biblioteca = Biblioteca.objects.all()
+    return render(request, "app8/mostrar.html", {"biblioteca": biblioteca})

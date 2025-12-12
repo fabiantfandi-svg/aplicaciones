@@ -10,3 +10,6 @@ class ArticuloEtiquetaLeerCrear(generics.ListCreateAPIView):
 class ArticuloEtiquetaEditarEliminar(generics.RetrieveUpdateDestroyAPIView):
     queryset = ArticuloEtiqueta.objects.all()
     serializer_class = ArticuloEtiquetaSerializers
+def articulo_etiqueta_template(request):
+    artieti = ArticuloEtiqueta.objects.all()
+    return render(request, "app10/mostrar.html", {"artieti": artieti})

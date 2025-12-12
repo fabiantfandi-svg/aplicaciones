@@ -10,3 +10,6 @@ class ArticuloLeerCrear(generics.ListCreateAPIView):
 class ArticuloEditarEliminar(generics.RetrieveUpdateDestroyAPIView):
     queryset = Articulo.objects.all()
     serializer_class = ArticuloSerializers
+def articulo_template(request):
+    articulos = Articulo.objects.all()
+    return render(request, "app3/mostrar.html", {"articulos": articulos})

@@ -10,3 +10,6 @@ class CategoriaLeerCrear(generics.ListCreateAPIView):
 class CategoriaEditarEliminar(generics.RetrieveUpdateDestroyAPIView):
     queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializers
+def mostrar_categorias(request):
+    categorias = Categoria.objects.all()
+    return render(request, "app2/mostrar.html", {"categorias": categorias})

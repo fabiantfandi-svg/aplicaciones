@@ -10,3 +10,6 @@ class FavoritoLeerCrear(generics.ListCreateAPIView):
 class FavoritoEditarEliminar(generics.RetrieveUpdateDestroyAPIView):
     queryset = Favorito.objects.all()
     serializer_class = FavoritoSerializers
+def favorito_template(request):
+    favoritos = Favorito.objects.all()
+    return render(request, "app7/mostrar.html", {"favoritos": favoritos})

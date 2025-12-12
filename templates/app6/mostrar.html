@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Comentarios</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f7f7f7;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin: 15px auto;
+            width: 90%;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .titulo {
+            font-weight: bold;
+            color: #8e44ad;
+        }
+
+        .sub {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .volver {
+            display: block;
+            width: 180px;
+            margin: 20px auto;
+            background: #8e44ad;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .volver:hover {
+            background: #732d91;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>Lista de Comentarios</h1>
+
+    <a href="/" class="volver">⬅ Volver al menú</a>
+
+    {% for c in comentarios %}
+    <div class="card">
+        <div class="titulo">Comentario #{{ c.id_comentario }}</div>
+
+        <p><strong>Artículo:</strong> {{ c.articulo.titulo }}</p>
+        <p><strong>Usuario:</strong> {{ c.usuario.nombre }}</p>
+        <p><strong>Contenido:</strong> {{ c.contenido }}</p>
+
+        <p class="sub">
+            Fecha: {{ c.fecha_creacion }} |
+            Activo: {{ c.activo }}
+        </p>
+
+        {% if c.comentario_padre %}
+        <p class="sub"><strong>Respuesta a:</strong> #{{ c.comentario_padre.id_comentario }}</p>
+        {% endif %}
+    </div>
+    {% endfor %}
+
+</body>
+</html>

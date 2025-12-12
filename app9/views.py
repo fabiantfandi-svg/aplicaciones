@@ -10,3 +10,6 @@ class EtiquetaLeerCrear(generics.ListCreateAPIView):
 class EtiquetaEditarEliminar(generics.RetrieveUpdateDestroyAPIView):
     queryset = Etiqueta.objects.all()
     serializer_class = EtiquetaSerializers
+def etiqueta_template(request):
+    etiquetas = Etiqueta.objects.all()
+    return render(request, "app9/mostrar.html", {"etiquetas": etiquetas})

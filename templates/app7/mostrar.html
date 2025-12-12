@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Favoritos</title>
+
+    <style>
+        body {
+            background: #fafafa;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1a5276;
+        }
+
+        .card {
+            background: white;
+            width: 90%;
+            margin: 18px auto;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+        }
+
+        .titulo {
+            font-weight: bold;
+            font-size: 18px;
+            color: #1a5276;
+            margin-bottom: 5px;
+        }
+
+        .volver {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            background: #1a5276;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .volver:hover {
+            background: #154360;
+        }
+
+        .sub {
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Favoritos Registrados</h1>
+
+<a href="/" class="volver">⬅ Volver al menú</a>
+
+{% for f in favoritos %}
+<div class="card">
+    <div class="titulo">
+        Favorito #{{ f.id_favorito }}
+    </div>
+
+    <p><strong>Usuario:</strong> {{ f.usuario.nombre }}</p>
+    <p><strong>Artículo:</strong> {{ f.articulo.titulo }}</p>
+
+    <p class="sub">
+        Fecha agregado: {{ f.fecha_agregado }}
+    </p>
+</div>
+{% endfor %}
+
+</body>
+</html>

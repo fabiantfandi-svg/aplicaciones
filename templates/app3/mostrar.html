@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Artículos</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f7f7f7;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        table th {
+            background: #3498db;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background: #f1f1f1;
+        }
+
+        .volver {
+            display: block;
+            width: 180px;
+            margin: 20px auto;
+            background: #2ecc71;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .volver:hover {
+            background: #27ae60;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>Lista de Artículos</h1>
+
+    <a href="/" class="volver">⬅ Volver al menú</a>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Resumen</th>
+            <th>Autor</th>
+            <th>Categoría</th>
+            <th>Estado</th>
+            <th>Fecha</th>
+            <th>Palabras</th>
+            <th>Visitas</th>
+        </tr>
+
+        {% for a in articulos %}
+        <tr>
+            <td>{{ a.id_articulo }}</td>
+            <td>{{ a.titulo }}</td>
+            <td>{{ a.resumen|truncatewords:15 }}</td>
+            <td>{{ a.autor.nombre }}</td>
+            <td>{{ a.categoria.nombre }}</td>
+            <td>{{ a.estado }}</td>
+            <td>{{ a.fecha_creacion }}</td>
+            <td>{{ a.palabras_clave }}</td>
+            <td>{{ a.visitas }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

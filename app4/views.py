@@ -10,3 +10,6 @@ class RevisorLeerCrear(generics.ListCreateAPIView):
 class RevisorEditarEliminar(generics.RetrieveUpdateDestroyAPIView):
     queryset = Revisor.objects.all()
     serializer_class = RevisorSerializers
+def revisor_template(request):
+    revisores = Revisor.objects.all()
+    return render(request, "app4/mostrar.html", {"revisores": revisores})

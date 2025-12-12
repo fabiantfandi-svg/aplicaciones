@@ -10,3 +10,6 @@ class RevisionLeerCrear(generics.ListCreateAPIView):
 class RevisionEditarEliminar(generics.RetrieveUpdateDestroyAPIView):
     queryset = Revision.objects.all()
     serializer_class = RevisionSerializers
+def revision_template(request):
+    revisiones = Revision.objects.all()
+    return render(request, "app5/mostrar.html", {"revisiones": revisiones})

@@ -10,3 +10,6 @@ class ComentarioLeerCrear(generics.ListCreateAPIView):
 class ComentarioEditarEliminar(generics.RetrieveUpdateDestroyAPIView):
     queryset = Comentario.objects.all()
     serializer_class = ComentarioSerializers
+def comentario_template(request):
+    comentarios = Comentario.objects.all()
+    return render(request, "app6/mostrar.html", {"comentarios": comentarios})
