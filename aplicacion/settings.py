@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'app8',
     'app9',
     'app10',
+    'app_reportes',
+    'app_dashboard',
     'rest_framework'
 ]
 
@@ -132,3 +134,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# ===============================
+# CONFIGURACIÓN ENVÍO DE CORREOS
+# ===============================
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = 'fabiantfandi@gmail.com'
+EMAIL_HOST_PASSWORD = 'xpgx cnbk glva ufgl'

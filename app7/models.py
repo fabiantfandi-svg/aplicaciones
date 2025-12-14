@@ -6,4 +6,4 @@ class Favorito(models.Model):
     articulo = models.ForeignKey("app3.Articulo",on_delete=models.CASCADE)
     fecha_agregado = models.DateTimeField(auto_now_add=True)
     def __str__(self):
-        return 
+        return f"{self.usuario.nombre} - {self.articulo.titulo}"

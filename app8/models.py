@@ -18,4 +18,4 @@ class Biblioteca(models.Model):
     subido_por = models.ForeignKey("app1.Usuario",on_delete=models.CASCADE)
     publico = models.BooleanField(default=True)
     def __str__(self):
-        return 
+        return self.titulo

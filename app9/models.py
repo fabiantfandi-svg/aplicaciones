@@ -6,4 +6,4 @@ class Etiqueta(models.Model):
     descripcion = models.TextField(blank=True)
     fecha_creacion = models.DateTimeField(auto_now_add=True)
     def __str__(self):
-        return 
+        return self.nombre

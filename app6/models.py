@@ -9,4 +9,4 @@ class Comentario(models.Model):
         activo = models.BooleanField(default=True)
         comentario_padre = models.ForeignKey("self",on_delete=models.CASCADE ,null=True,blank=True)
         def __str__(self):
-                return 
+         return f"Comentario {self.id_comentario}"

@@ -7,4 +7,4 @@ class Categoria(models.Model):
     color = models.CharField(max_length=7,default='#007bff')
     fecha_creacion = models.DateTimeField(auto_now_add=True)
     def __str__(self):
-        return 
+        return self.nombre

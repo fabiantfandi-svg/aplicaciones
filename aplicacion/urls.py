@@ -19,7 +19,7 @@ from django.urls import path,include
 from django.shortcuts import render
 
 def home(request):
-    return render(request, "home.html")  
+    return render(request, 'home.html')
 
 urlpatterns = [
     path('', home, name='home'),
@@ -33,5 +33,6 @@ urlpatterns = [
     path('app7/',include('app7.urls')),
     path('app8/',include('app8.urls')),
     path('app9/',include('app9.urls')),
-    path('app10/',include('app10.urls'))
+    path('app10/',include('app10.urls')),
+    path("dashboard/", include("app_dashboard.urls")),
 ]

@@ -6,4 +6,4 @@ class ArticuloEtiqueta(models.Model):
     etiqueta = models.ForeignKey("app9.Etiqueta",on_delete=models.CASCADE)
     fecha_asignacion = models.DateTimeField(auto_now_add=True)
     def __str__(self):
-        return 
+        return f"{self.articulo.titulo} - {self.etiqueta.nombre}"

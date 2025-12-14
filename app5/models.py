@@ -14,4 +14,4 @@ class Revision(models.Model):
         ('rechazar','Rechazar')
     ])
     def __str__(self):
-        return 
+        return f"Revision {self.id_revision}"

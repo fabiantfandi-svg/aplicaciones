@@ -1,0 +1,28 @@
+# Entorno virtual
+venv/
+ENV/
+env/
+
+# Archivos de Python compilados
+*.pyc
+__pycache__/
+
+# Base de datos local
+db.sqlite3
+
+# Archivos de logs
+*.log
+
+# Archivos de IDE/editor
+.vscode/
+.idea/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Carpeta de media (opcional, si no quieres subir uploads)
+media/
+
+# Node.js dependencies
+node_modules/

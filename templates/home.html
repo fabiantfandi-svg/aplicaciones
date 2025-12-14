@@ -1,103 +1,147 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home APIs</title>
+    <title>Panel Principal</title>
 
     <style>
         body {
+            background: #f4f6f7;
             font-family: Arial, sans-serif;
-            background: #f3f4f6;
-            margin: 0;
-            padding: 0;
+            padding: 30px;
         }
 
         h1 {
             text-align: center;
-            margin-top: 30px;
-            font-size: 32px;
+            color: #2c3e50;
+            margin-bottom: 35px;
         }
 
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            padding: 30px;
-            width: 80%;
+        table {
+            width: 85%;
             margin: auto;
-        }
-
-        .btn-api {
-            display: block;
-            width: 100%;
-            padding: 25px 0;
-            text-align: center;
-            background: #2563eb;
-            color: white;
-            font-size: 20px;
-            font-weight: bold;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
             border-radius: 12px;
-            text-decoration: none;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-            transition: transform 0.2s ease, background 0.3s ease;
+            overflow: hidden;
         }
 
-        .btn-api:hover {
-            background: #1e40af;
-            transform: translateY(-4px);
-        }
-
-        .single-button-container {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            margin-top: -10px;
-            margin-bottom: 40px;
-        }
-
-        .btn-api-10 {
-            width: 40%;
-            padding: 30px 0;
-            background: #059669;
-            color: white;
-            font-size: 22px;
-            font-weight: bold;
-            border-radius: 15px;
+        th, td {
+            padding: 14px;
             text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #2c3e50;
+            color: white;
+            font-size: 16px;
+        }
+
+        tr:hover {
+            background: #ecf0f1;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: none;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
             text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.18);
-            transition: transform 0.2s ease, background 0.3s ease;
+            display: inline-block;
         }
 
-        .btn-api-10:hover {
-            background: #047857;
-            transform: translateY(-4px);
+        .btn:hover {
+            opacity: 0.85;
         }
 
+        .app1 { background: #1abc9c; }
+        .app2 { background: #3498db; }
+        .app3 { background: #9b59b6; }
+        .app4 { background: #e67e22; }
+        .app5 { background: #e74c3c; }
+        .app6 { background: #16a085; }
+        .app7 { background: #2980b9; }
+        .app8 { background: #8e44ad; }
+        .app9 { background: #d35400; }
+        .app10 { background: #2c3e50; }
     </style>
 </head>
+
 <body>
 
-    <h1>Panel de APIs</h1>
+<h1>Panel Principal de APIs</h1>
 
-    <div class="grid-container">
-        <a href="{% url 'api1_home' %}" class="btn-api">API 1</a>
-        <a href="{% url 'api2_home' %}" class="btn-api">API 2</a>
-        <a href="{% url 'api3_home' %}" class="btn-api">API 3</a>
-        <a href="{% url 'api4_home' %}" class="btn-api">API 4</a>
-        <a href="{% url 'api5_home' %}" class="btn-api">API 5</a>
-        <a href="{% url 'api6_home' %}" class="btn-api">API 6</a>
-        <a href="{% url 'api7_home' %}" class="btn-api">API 7</a>
-        <a href="{% url 'api8_home' %}" class="btn-api">API 8</a>
-        <a href="{% url 'api9_home' %}" class="btn-api">API 9</a>
-    </div>
+<table>
+    <tr>
+        <th>Tabla / Módulo</th>
+        <th>Descripción</th>
+        <th>Acción</th>
+    </tr>
 
-    <div class="single-button-container">
-        <a href="{% url 'api10_home' %}" class="btn-api-10">API 10</a>
-    </div>
+    <tr>
+        <td>API 1 - Usuarios</td>
+        <td>Gestión de usuarios registrados</td>
+        <td><a class="btn app1" href="/app1/mostrar/">Ver</a></td>
+    </tr>
+
+    <tr>
+        <td>API 2 - Categorías</td>
+        <td>Categorías del sistema</td>
+        <td><a class="btn app2" href="/app2/mostrar/">Ver</a></td>
+    </tr>
+
+    <tr>
+        <td>API 3 - Artículos</td>
+        <td>Artículos publicados</td>
+        <td><a class="btn app3" href="/app3/mostrar/">Ver</a></td>
+    </tr>
+
+    <tr>
+        <td>API 4 - Revisores</td>
+        <td>Revisores asignados</td>
+        <td><a class="btn app4" href="/app4/mostrar/">Ver</a></td>
+    </tr>
+
+    <tr>
+        <td>API 5 - Revisiones</td>
+        <td>Revisiones de artículos</td>
+        <td><a class="btn app5" href="/app5/mostrar/">Ver</a></td>
+    </tr>
+
+    <tr>
+        <td>API 6 - Comentarios</td>
+        <td>Comentarios de usuarios</td>
+        <td><a class="btn app6" href="/app6/mostrar/">Ver</a></td>
+    </tr>
+
+    <tr>
+        <td>API 7 - Favoritos</td>
+        <td>Artículos favoritos</td>
+        <td><a class="btn app7" href="/app7/mostrar/">Ver</a></td>
+    </tr>
+
+    <tr>
+        <td>API 8 - Biblioteca</td>
+        <td>Recursos de la biblioteca</td>
+        <td><a class="btn app8" href="/app8/mostrar/">Ver</a></td>
+    </tr>
+
+    <tr>
+        <td>API 9 - Etiquetas</td>
+        <td>Etiquetas de clasificación</td>
+        <td><a class="btn app9" href="/app9/mostrar/">Ver</a></td>
+    </tr>
+
+    <tr>
+        <td>API 10 - Artículo / Etiqueta</td>
+        <td>Relación entre artículos y etiquetas</td>
+        <td><a class="btn app10" href="/app10/mostrar/">Ver</a></td>
+    </tr>
+</table>
 
 </body>
 </html>

@@ -19,4 +19,4 @@ class Articulo(models.Model):
     palabras_clave = models.CharField(max_length=200)
     visitas = models.IntegerField(default=0)
     def __str__(self):
-        return 
+        return self.titulo

@@ -17,4 +17,4 @@ class Usuario(models.Model):
     activo = models.BooleanField(default=True)
 
     def __str__(self):
-        return 
+        return self.nombre

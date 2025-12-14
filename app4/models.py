@@ -8,4 +8,4 @@ class Revisor(models.Model):
     disponible = models.BooleanField(default=True)
     fecha_registro = models.DateTimeField(auto_now_add=True)
     def __str__(self):
-        return 
+        return f"Revisor: {self.usuario.nombre}"
